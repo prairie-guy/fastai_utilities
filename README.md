@@ -48,7 +48,7 @@ optional arguments:
 
 ```
 
-### methods_of(obj,lr=False)
+### methods_of(obj,lr=False):
 List the attribues of a fastai object, like a learner
 
 ``` python
@@ -65,7 +65,7 @@ resize_imgs(targ, new_path):
 transform(im, y=None):
 ```
 
-#### attributes_of(obj, *exclude)
+#### attributes_of(obj, *exclude):
 List the methods of a fastai object
 
 ``` python
@@ -80,22 +80,4 @@ path: data/dogscats/
 sz: 224
 y: [0 0 0 ... 1 1 1]
 ```
-
-### Example Usage
-```
-import sys
-sys.path.append('your-parent-directory-of-fastai_utilities')
-from fastai_utilities import *
-
-data = ImageClassifierData.from_paths(PATH, tfms=tfms_from_model(arch, sz))
-methods_of(data.trn_dl.dataset)                                                                                                                                                                               
-denorm(arr):                                                                                                                                                                                                    
-get(tfm, x, y):                                                                                                                                                                                                 
-get_c():                                                                                                                                                                                                        
-get_n():                                                                                                                                                                                                        
-get_sz():                                                                                                                                                                                                       
-get_x(i):                                                                                                                                                                                                       
-get_y(i):                                                                                                                                                                                                       
-resize_imgs(targ, new_path):                                                                                                                                                                                    
-transform(im, y=None):    
-```    
+                                                                                                                                                                                           
