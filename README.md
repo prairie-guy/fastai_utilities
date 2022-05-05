@@ -20,7 +20,7 @@ from fastai_utilities import *
 ### reindex(dest, start_idx=0, ext = None)
 The reason I wrote `reindex`, and the problem it solved, was related to **data cleaning**, specifically when using the widget `ImageClassifierCleaner`. Images downloaded with the fastai function `download_images` are named: **{dir1/0000001.jpg, dir1/0000002.jpg, dir1/0000002.jpg, ...}**. Accordingly, for multiple catagories, these are characterized by the name of the directory, not the pathname of the file. When using `ImageClassifierCleaner` to reclassify an image, i.e., move it from **dog**` to **cat**, `ImageClassifierCleaner` attempts to move the image from the **dog** directory to the **cat** directory. This will often result in an error as the pathname, i.e., **00001013.jpg** already exists. 
 
-`reindex` fixes this problem by uniquely reindexing all files within first-level directories of `dest`
+`reindex` fixes this problem by uniquely reindexing all files within first-level directories of **dest**
 
 ```
 **dest** contains directories of images: dir1/{1.jpg, 2.jpg, 3.jpg}, dir2/{1.jpg, 2.jpg, 3.jpg}, dir3/{1.jpg, 2.jpg, 3.jpg}
