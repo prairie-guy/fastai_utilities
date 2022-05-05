@@ -59,30 +59,39 @@ optional arguments:
 ``` python
 > data = ImageClassifierData.from_paths(PATH, tfms=tfms_from_model(arch, sz))
 > methods_of(data.trn_dl.dataset)
-denorm(arr):
-get(tfm, x, y):
-get_c():
-get_n():
-get_sz():
-get_x(i):
-get_y(i):
-resize_imgs(targ, new_path):
-transform(im, y=None):
+attributes_of(learn)
+
 ```
 
 #### attributes_of(obj, *exclude)
 `attributes_of` is similiar to `methods_of` except for that it lists the attributes for that fastai object.
 
 ``` python
-> data = ImageClassifierData.from_paths(PATH, tfms=tfms_from_model(arch, sz))
-> attributes_of(data.trn_dl.dataset,'fnames')
-c: 2
-fnames: ...
-is_multi: False
-is_reg: False
-n: 23000
-path: data/dogscats/
-sz: 224
-y: [0 0 0 ... 1 1 1]
+> learn = vision_learner(dls, resnet34, metrics=[error_rate,accuracy])
+> attributes_of(learn)
+```
+
+```
+T_destination: ~T_destination
+cbs: [TrainEvalCallback, Recorder, ProgressCallback]
+create_mbar: True
+dls: <fastai.data.core.DataLoaders object at 0x7f1234bd0f10>
+dump_patches: False
+lock: <unlocked _thread.lock object at 0x7f1234bf3780>
+lr: 0.001
+metrics: [<fastai.learner.AvgMetric object at 0x7f1234bef880>, <fastai.learner.AvgMetric object at 0x7f1234bef9a0>]
+model_dir: models
+moms: (0.95, 0.85, 0.95)
+n_epoch: 1
+n_out: 4
+normalize: True
+opt: <fastai.optimizer.Optimizer object at 0x7f1234bf3310>
+path: .
+pretrained: True
+train_bn: True
+training: False
+training: False
+wd: None
+wd_bn_bias: False
 ```
                                                                                                                                                                                            
