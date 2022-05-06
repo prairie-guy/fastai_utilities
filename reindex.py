@@ -42,7 +42,7 @@ usage: ./reindex.py image_dir --start_idx 100 --ext 'jpg'
     idx = start_idx
     for d in filter(Path.is_dir, dest.iterdir()):
         idx = reindex_dir(d, idx, ext=ext)
-    return idx + 1
+    return idx
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Uniquely reindexes all files within first-level directories of `dest`")
